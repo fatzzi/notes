@@ -7,7 +7,7 @@ This repository contains notes and examples focused on **Function Pointers**, **
 
 ## What You'll Find Here
 
-### Function Pointers
+### [Function Pointers](https://github.com/fatzzi/notes/blob/main/Function_Pointers.md)
 Function pointers are variables that store the address of a function. They let you:
 - Call functions indirectly
 - Pass functions as arguments

@@ -45,7 +45,7 @@ auto lambda = [x](int a) {
 };
 ```
 
-Since it captures x, you cannot store this in a function pointer. In std::function<int(int)>, however, can store it.
+Since it captures x, you cannot store this in a function pointer. In std::function<int(int)>, however, can store it. Following are some examples of how std::function can be used.
 
 ## Storing a Functor
 ``` cpp
@@ -97,5 +97,10 @@ int main() {
     return 0;
 }
 ```
-
+## Key Points:
+- Type Erasure: Can hold any callable type matching a specific signature.
+- Type Safety: Ensures only compatible callables can be assigned.
+- Copyable and Assignable: Easy to pass around in code.
+- Storage: Manages both small and large callable objects.
+- std::function may introduce some overhead compared to function pointers or direct calls.
 

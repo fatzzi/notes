@@ -21,7 +21,7 @@ Lambdas in C++ allow you to define anonymous functions on the fly, right where y
 - Using `mutable` to modify captured values
 - Explicit return types and auto return type deduction
 
-### `std::function`
+### [std::function](https://github.com/fatzzi/notes/blob/main/std%3A%3Afunction.md)
 `std::function` is a flexible, type-safe way to store any callable object (functions, function pointers, lambdas, functors). It ensures that the signature matches what’s expected and is easier to use in complex situations where the callable type might change. You’ll learn:
 - Storing function pointers and lambdas
 - Using it with functors and STL algorithms

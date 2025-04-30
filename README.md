@@ -14,7 +14,7 @@ Function pointers are variables that store the address of a function. They let y
 - Implement callbacks
 
 
-### Lambdas
+### [Lambdas](https://github.com/fatzzi/notes/blob/main/Lambda_Expressions.md)
 Lambdas in C++ allow you to define anonymous functions on the fly, right where you need them. They can capture variables from their surrounding scope and can be used in place of regular function pointers. Topics include:
 - Basic syntax
 - Captures by value, reference, and mixed

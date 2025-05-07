@@ -1,4 +1,4 @@
-# `std::function`
+### `std::function`
 
 `std::function` provides a type-safe (ensures the callable object matches the expected signature) way to store and invoke all callable objects like functions, function pointers, lambda expressions, and functors. It is defined in the `<functional>` header.
 
@@ -47,64 +47,15 @@ auto lambda = [x](int a) {
 
 Since it captures x, you cannot store this in a function pointer. In std::function<int(int)>, however, can store it. Following are some examples of how std::function can be used.
 
-## Storing a Functor
-``` cpp
-#include <iostream>
-#include <functional>
 
-class Multiplier {
-public:
-    Multiplier(int factor) : factor(factor) {}
-
-    int operator()(int x) const {
-        return x * factor; // Multiply by the factor
-    }
-
-private:
-    int factor;
-};
-
-int main() {
-    // Store a functor in std::function
-    std::function<int(int)> multiplyByTwo = Multiplier(2);
-
-    // Call the functor
-    std::cout << "Result: " << multiplyByTwo(5) << std::endl; // Output: Result: 10
-
-    return 0;
-}
-```
-
-## With STL algorithms
-``` cpp
-#include <iostream>
-#include <vector>
-#include <algorithm>
-#include <functional>
-
-int main() {
-    std::vector<int> numbers = {1, 2, 3, 4, 5};
-
-    // Define a std::function to use with std::for_each
-    std::function<void(int)> print = [](int x) {
-        std::cout << x << " "; // Print each number
-    };
-
-    // Use std::for_each with std::function
-    std::for_each(numbers.begin(), numbers.end(), print);
-    std::cout << std::endl; // Output: 1 2 3 4 5
-
-    return 0;
-}
-```
 ## Key Points:
 - Type Erasure: Can hold any callable type matching a specific signature.
 - Type Safety: Ensures only compatible callables can be assigned.
 - Copyable and Assignable: Easy to pass around in code.
 - Storage: Manages both small and large callable objects.
-- std::function may introduce some overhead compared to function pointers or direct calls.
+- std::function may introduce some overhead compared to function pointers or direct calls due to heap allocation.
 
 ## Summary
 std::function in C++ is a type-safe, general-purpose function wrapper that can store anything callable—like regular functions, lambda expressions (even with captures), function pointers, or functors (objects with operator()). It's defined in the <functional> header and allows you to treat different kinds of callable entities uniformly. For example, std::function<int(int, int)> func; can hold any function that takes two int arguments and returns an int. You can assign it like func = [](int a, int b) { return a + b; }; and call it with func(2, 3). Unlike function pointers, std::function supports lambdas with captures and is more flexible, though it introduces a slight overhead due to type erasure and heap allocation in some cases.
 
-
+For more examples on how std::function is used check out [examples]()!

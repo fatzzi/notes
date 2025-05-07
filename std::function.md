@@ -104,3 +104,7 @@ int main() {
 - Storage: Manages both small and large callable objects.
 - std::function may introduce some overhead compared to function pointers or direct calls.
 
+## Summary
+std::function in C++ is a type-safe, general-purpose function wrapper that can store anything callable—like regular functions, lambda expressions (even with captures), function pointers, or functors (objects with operator()). It's defined in the <functional> header and allows you to treat different kinds of callable entities uniformly. For example, std::function<int(int, int)> func; can hold any function that takes two int arguments and returns an int. You can assign it like func = [](int a, int b) { return a + b; }; and call it with func(2, 3). Unlike function pointers, std::function supports lambdas with captures and is more flexible, though it introduces a slight overhead due to type erasure and heap allocation in some cases.
+
+

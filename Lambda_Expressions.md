@@ -82,8 +82,6 @@ Captures all accessible variables by value.
 ## 4. Capture All by Reference ([&])
 Captures all accessible variables by reference.
 ```cpp
-
-    
     auto lambda = [&]() {
         a += 5;
         b += 10;
@@ -91,17 +89,6 @@ Captures all accessible variables by reference.
     };
     
 
-```cpp
-#include <iostream>
-
-int main() {
-    auto lambda = [](int a, int b) -> double {
-        return static_cast<double>(a) / b;  // Forces double return
-    };
-
-    std::cout << "Result: " << lambda(5, 2) << std::endl;  // Output: Result: 2.5
-    return 0;
-}
 ```
 # Calling Lambdas
 ## Immediate Invocation (IIFE)
@@ -132,7 +119,7 @@ std::sort(vec.begin(), vec.end(), [](int a, int b){ return a < b; });
 
 Lambda expressions in C++ are anonymous, inline functions that allow you to define function-like behavior directly within your code, making it concise and expressive, especially for short operations like sorting or filtering. Their syntax includes a capture clause [ ] for accessing variables from the surrounding scope (by value or reference), parameter list (), optional return type ->, and a function body {}. They can capture variables explicitly (e.g., [x], [&x]) or implicitly (e.g., [=], [&]), and can even capture the this pointer in member functions. Lambdas are useful in algorithms, callbacks, and when passing behavior as parameters. They support immediate invocation and can modify captured values using the mutable keyword. Return types are usually deduced automatically but can be specified explicitly when needed.
 
-For more examples of how they are used check out [examples]()
+For more examples of how they are used check out [examples](https://github.com/fatzzi/notes/blob/main/lambda_expression_examples.md)!
 
 
 
